@@ -1,0 +1,68 @@
+<block>
+    <view>
+        <image src="{{bannerUrl}}" class="banner-image" mode="widthFix"></image>
+        <view class="weui-cells__title" style="{{anonymousState__temp}}">基本信息</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label weui-label_sm">活动名称</view>
+                </view>
+                <view class="weui-cell__ft">{{detail.package_title}}</view>
+            </view>
+            <view class="cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label weui-label_sm">价格</view>
+                </view>
+                <view class="weui-cell__ft">{{detail.pay_price}}</view>
+            </view>
+            <view class="cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label weui-label_sm">有效期至</view>
+                </view>
+                <view class="weui-cell__ft">{{anonymousState__temp2}}</view>
+            </view>
+            <view class="cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label weui-label_sm">参与时间</view>
+                </view>
+                <view class="weui-cell__ft">{{anonymousState__temp3}}</view>
+            </view>
+            <view class="cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label weui-label_sm">参与门店</view>
+                </view>
+                <view className="weui-cell__ft" __triggerObserer="{{ _triggerObserer }}">{{detail.company_name || ''}}</view>
+            </view>
+            <view class="cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label weui-label_sm">门店地址</view>
+                </view>
+                <view class="weui-cell__ft" style="{{anonymousState__temp4}}">{{detail.company_address}}</view>
+            </view>
+            <view class="cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label weui-label_sm">门店电话</view>
+                </view>
+                <view class="weui-cell__ft" bindtap="anonymousFunc0">{{detail.company_phone || ''}}</view>
+            </view>
+            <view class="cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label weui-label_sm">备注</view>
+                </view>
+                <view class="weui-cell__ft">{{detail.remark}}</view>
+            </view>
+        </view>
+        <view class="weui-cells__title" style="{{anonymousState__temp5}}">项目</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view wx:key="$original._id" class="weui-media-box weui-media-box_appmsg" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="_anonIdx">
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title mb10">{{item.$original.maintain_item_name}}</view>
+                    <view class="weui-media-box__desc mb5"><text>总计：{{item.$original.total_count}}次 剩余：{{item.$original.remain_count}}次</text>
+                    </view>
+                    <view class="weui-media-box__desc"><text>最后核销时间：</text><text class="pull-right">{{item.$loopState__temp7}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

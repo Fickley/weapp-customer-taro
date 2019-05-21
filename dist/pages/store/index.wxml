@@ -1,0 +1,40 @@
+<block>
+    <view>
+        <scroll-view>
+            <view class="weui-panel weui-panel_access">
+                <view class="weui-panel__bd">
+                    <navigator url="/pages/store/coupon-cards?id={{item.company_id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="_anonIdx">
+                        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="{{item.$loopState__temp2}}">
+                            <image class="weui-media-box__thumb" src="{{item.$original.icon_pic}}"></image>
+                        </view>
+                        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                            <view class="flex-row-between">
+                                <view class="weui-media-box__title">{{item.$original.company_info.name || ''}}</view>
+                                <block>
+                                    <block wx:if="{{item.$original.distance >= 1000}}">
+                                        <view class="weui-media-box__desc font12 ml10">{{item.$original.distance / 1000}}km</view>
+                                    </block>
+                                    <block wx:else>
+                                        <view class="weui-media-box__desc font12 ml10">{{item.$original.distance}}m</view>
+                                    </block>
+                                </block>
+                            </view>
+                            <view class="weui-media-box__desc">优惠券：{{item.$original.coupon_item_count}}张</view>
+                            <view class="weui-media-box__desc">储蓄余额：{{item.$original.prepay_remain}}元</view>
+                            <view class="weui-media-box__info">
+                                <view class="weui-media-box__info__meta font12">{{item.$original.company_info.province}}{{item.$original.company_info.city}}{{item.$original.company_info.country}}{{item.$original.company_info.address}}</view>
+                            </view>
+                        </view>
+                    </navigator>
+                    <block wx:if="{{list.length < 1}}">
+                        <view class="flex-row-center">
+                            <view class="font16 fontGray">还没有消费过，快去门店消费吧</view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </scroll-view>
+        <login visible="{{loginViewVisible}}" __triggerObserer="{{ _triggerObserer }}" bindoncancel="onCancel" bindonreloaduserinfo="onReloadUserInfo" __fn_onCancel="{{true}}" __fn_onReloadUserInfo="{{true}}"></login>
+        <bind-phone title="输入您的联系方式" __triggerObserer="{{ _triggerObserer }}" visible="{{bindPhoneVisible}}" bindoncancel="onCancel" bindonreloaduserinfo="onReloadUserInfo" __fn_onCancel="{{true}}" __fn_onReloadUserInfo="{{true}}"></bind-phone>
+    </view>
+</block>

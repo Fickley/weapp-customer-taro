@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "login": "../../components/login",
+    "bind-phone": "../../components/bind-phone"
+  },
+  "navigationBarTitleText": "活动详情"
+}

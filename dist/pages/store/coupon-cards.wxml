@@ -1,0 +1,21 @@
+<block>
+    <scroll-view>
+        <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__bd">
+                <navigator url="/pages/store/coupon-card-detail?companyId={{companyId}}&cardId={{item._id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="_anonIdx">
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">{{item.$original.title}}</view>
+                        <view class="weui-media-box__desc">售价：{{item.$original.sell_price}}</view>
+                        <view class="weui-media-box__desc">{{item.$loopState__temp2}}</view>
+                    </view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </navigator>
+                <block wx:if="{{list.length < 1}}">
+                    <view class="flex-row-center" style="{{anonymousState__temp3}}">
+                        <view class="font16 fontGray">暂无套餐卡</view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </scroll-view>
+</block>

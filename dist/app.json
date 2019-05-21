@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/home",
+    "pages/me/index",
+    "pages/me/consume",
+    "pages/activity/index",
+    "pages/activity/detail",
+    "pages/attend-activity/success",
+    "pages/attend-activity/detail",
+    "pages/store/index",
+    "pages/store/coupon-cards",
+    "pages/store/coupon-card-detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "我的活动",
+    "navigationBarBackgroundColor": "#FFAD01",
+    "backgroundColorTop": "#FFAD01",
+    "backgroundColorBottom": "#FFAD01"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于展示您附近的优惠活动"
+    }
+  }
+}

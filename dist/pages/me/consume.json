@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "login": "../../components/login",
+    "bind-phone": "../../components/bind-phone"
+  },
+  "navigationBarTitleText": "核销列表"
+}

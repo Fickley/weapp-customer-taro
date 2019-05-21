@@ -1,0 +1,51 @@
+<block>
+    <view>
+        <scroll-view>
+            <view class="weui-search-bar">
+                <view class="weui-search-bar__form">
+                    <view class="weui-search-bar__box">
+                        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{key}}" bindinput="inputTyping" />
+                        <block wx:if="{{key.length > 0}}">
+                            <view class="weui-icon-clear" bindtap="clearInput">
+                                <icon type="clear" size="14"></icon>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-panel weui-panel_access">
+                <view class="weui-panel__bd">
+                    <view wx:key="$original._id" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" bindtap="anonymousFunc0" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="__index0" data-e-tap-so="this" data-e-tap-a-a="{{__index0}}">
+                        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="{{item.$loopState__temp2}}">
+                            <image class="weui-media-box__thumb" src="{{item.$original.banner_url}}"></image>
+                        </view>
+                        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                            <view class="weui-media-box__title">{{item.$original.package_title}}</view>
+                            <view class="weui-media-box__desc">{{item.$original.remark}}</view>
+                            <view class="weui-media-box__info" style="{{item.$loopState__temp4}}">
+                                <view class="weui-media-box__info__meta">门店名称：{{item.$original.from_type === '4' ? '水稻会员' : item.$original.company_name || ''}}</view>
+                            </view>
+                            <view class="weui-media-box__info" style="{{item.$loopState__temp6}}">
+                                <view class="weui-media-box__info__meta">有效期至：{{item.$original.expire_date === '9999-12-31' ? '永久有效' : item.$original.expire_date}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <block wx:if="{{loading}}">
+                        <view class="weui-loadmore">
+                            <view class="weui-loading"></view>
+                            <view class="weui-loadmore__tips">正在加载</view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </scroll-view>
+        <block wx:if="{{!isHideOfficialAccount}}">
+            <view class="weui-panel__bd">
+                <official-account></official-account>
+            </view>
+        </block>
+        <login visible="{{loginViewVisible}}" __triggerObserer="{{ _triggerObserer }}" bindoncancel="onCancel" bindonreloaduserinfo="onReloadUserInfo" __fn_onCancel="{{true}}" __fn_onReloadUserInfo="{{true}}"></login>
+        <bind-phone title="输入您的联系方式" __triggerObserer="{{ _triggerObserer }}" visible="{{bindPhoneVisible}}" bindoncancel="onCancel" bindonreloaduserinfo="onReloadUserInfo" __fn_onCancel="{{true}}" __fn_onReloadUserInfo="{{true}}"></bind-phone>
+    </view>
+</block>

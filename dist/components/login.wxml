@@ -1,0 +1,13 @@
+<block>
+    <block wx:if="{{visible}}">
+        <view class="modal-wrapper">
+            <view class="modal-content">
+                <view class="modal-title">微信登录</view>
+                <view class="modal-body">
+                    <button class="weui-btn" type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGetUserInfo"><text class="iconfont icon-wechat-fill text-green font20">微信授权登录</text>
+                    </button>
+                </view>
+            </view>
+        </view>
+    </block>
+</block>

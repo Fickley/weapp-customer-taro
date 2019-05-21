@@ -1,0 +1,30 @@
+<block>
+    <scroll-view>
+        <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_appmsg card" style="{{anonymousState__temp}}" hover-class="weui-cell_active">
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg" style="{{anonymousState__temp2}}">
+                        <view class="weui-media-box__title font16" style="{{anonymousState__temp3}}"><text class="fl">{{detail.title}}</text><text class="fr">{{detail.sell_price}}元</text>
+                        </view>
+                        <view class="weui-media-box__title font14">{{anonymousState__temp4}}</view>
+                    </view>
+                </view>
+                <view class="{{list.length === 0 ? 'mt10 mb10 hidden' : 'mt10 mb10 show'}}"><text class="fl ml10 font12">卡内项目</text><text class="fr mr10 font12">总量</text>
+                </view>
+                <view class="weui-media-box weui-media-box_appmsg flex-row-between" hover-class="weui-cell_active" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="_anonIdx">
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title font14" style="{{item.$loopState__temp6}}">
+                            <view style="{{item.$loopState__temp8}}"><text class="fl">{{item.$original.item_name || '--'}}</text><text class="fl">{{item.$original.coupon_price ? item.$original.coupon_price + '元' : '0.00元'}}</text>
+                            </view>
+                            <view><text class="fr">{{item.$original.total_count}}次</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="weui-panel__bd show">
+            <official-account></official-account>
+        </view>
+    </scroll-view>
+</block>

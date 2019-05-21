@@ -1,0 +1,53 @@
+<block>
+    <view>
+        <view class="head-bar">
+            <view class="avatar-wrapper">
+                <block>
+                    <block wx:if="{{userInfo.avatar_url}}">
+                        <image class="user-avatar" src="{{userInfo.avatar_url}}"></image>
+                    </block>
+                    <block wx:else>
+                        <view class="user-avatar"><text class="iconfont icon-user font32"></text>
+                        </view>
+                    </block>
+                </block>
+            </view>
+            <block>
+                <block wx:if="{{!userInfo.nick_name}}">
+                    <view class="content">
+                        <button class="btn-login" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">请先登录</button>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="content">
+                        <view><text class="text-default font18 bold">{{userInfo.nick_name}}</text>
+                        </view>
+                        <view class="text-default">{{!userInfo.phone ? '请绑定手机号' : userInfo.phone}}<text class="iconfont icon-edit-square text-default ml10" bindtap="onEditPhone"></text>
+                        </view>
+                    </view>
+                </block>
+            </block>
+        </view>
+        <view class="weui-grids">
+            <view class="weui-panel">
+                <view class="weui-panel__hd"></view>
+                <view class="weui-panel__bd">
+                    <view class="weui-media-box weui-media-box_small-appmsg">
+                        <view class="weui-cells weui-cells_in-small-appmsg">
+                            <navigator url="/pages/me/consume" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                                <view class="weui-cell__hd">
+                                    <image src="{{anonymousState__temp}}" class="bar-icon"></image>
+                                </view>
+                                <view class="weui-cell__bd weui-cell_primary">
+                                    <view>核销记录</view>
+                                </view>
+                                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <bind-phone title="输入您的联系方式" __triggerObserer="{{ _triggerObserer }}" visible="{{bindPhoneVisible}}" bindoncancel="onCancel" bindonreloaduserinfo="onReloadUserInfo" __fn_onCancel="{{true}}" __fn_onReloadUserInfo="{{true}}"></bind-phone>
+    </view>
+</block>

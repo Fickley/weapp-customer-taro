@@ -1,0 +1,29 @@
+<block>
+    <view>
+        <swiper style="{{anonymousState__temp}}">
+            <swiper-item>
+                <image src="{{anonymousState__temp2}}" style="{{anonymousState__temp3}}"></image>
+            </swiper-item>
+        </swiper>
+        <navigator url="./store/index">
+            <view class="title-line">
+                <image src="{{anonymousState__temp4}}" mode="widthFix" class="centerIcon"></image><text class="font-default">常去门店</text>
+            </view>
+        </navigator>
+        <navigator url="./activity/index">
+            <view class="title-line">
+                <image src="{{anonymousState__temp5}}" mode="widthFix" class="centerIcon"></image><text class="font-default">我的优惠券</text>
+            </view>
+        </navigator>
+        <navigator url="./me/consume">
+            <view class="title-line">
+                <image src="{{anonymousState__temp6}}" mode="widthFix" class="centerIcon"></image><text class="font-default">核销记录</text>
+            </view>
+        </navigator>
+        <navigator url="./me/index">
+            <view class="title-line">
+                <image src="{{anonymousState__temp7}}" mode="widthFix" class="centerIcon"></image><text class="font-default">个人中心</text>
+            </view>
+        </navigator>
+    </view>
+</block>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "bind-phone": "../../components/bind-phone"
+  },
+  "navigationBarTitleText": "个人中心",
+  "disableScroll": true
+}
