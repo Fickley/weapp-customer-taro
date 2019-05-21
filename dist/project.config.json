@@ -1,52 +1,51 @@
 {
-  "description": "Shuidao customer client",
-  "setting": {
-    "urlCheck": true,
-    "es6": false,
-    "postcss": false,
-    "minified": false
-  },
-  "compileType": "miniprogram",
-  "appid": "wx8ea4ba5f269759f6",
-  "projectname": "weapp-customer-taro",
-  "miniprogramRoot": "./",
-  "libVersion": "2.5.0",
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
-  "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
-    "plugin": {
-      "current": 0,
-      "list": [
-        {
-          "id": 0,
-          "name": "参加活动",
-          "pathName": "pages/attend-activity/detail",
-          "query": "activityId=770",
-          "scene": "1001"
-        },
-        {
-          "id": 1,
-          "name": "预览活动",
-          "pathName": "pages/attend-activity/detail",
-          "query": "activityId=1744&isPreview=true",
-          "scene": "1001"
-        }
-      ]
-    },
-    "game": {
-      "list": []
-    },
-    "miniprogram": {
-      "current": -1,
-      "list": []
-    }
-  }
+	"description": "Shuidao customer client",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false
+	},
+	"compileType": "miniprogram",
+	"appid": "wx8ea4ba5f269759f6",
+	"projectname": "taro",
+	"libVersion": "2.5.0",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "参加活动",
+					"pathName": "pages/attend-activity/detail",
+					"query": "activityId=770",
+					"scene": "1001"
+				},
+				{
+					"id": 1,
+					"name": "预览活动",
+					"pathName": "pages/attend-activity/detail",
+					"query": "activityId=1744&isPreview=true",
+					"scene": "1001"
+				}
+			]
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": []
+		}
+	}
 }
